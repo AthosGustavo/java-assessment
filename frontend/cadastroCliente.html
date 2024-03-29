@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadastro de Cliente</title>
+  <style>
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    nav button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <button onclick="window.location.href='index.html'">Voltar</button>
+
+  <form id="clienteForm">
+    <label for="nomeCliente">Nome do cliente</label><br>
+    <input type="text" id="nomeCliente" name="nome"><br>
+    
+    <label for="rgCliente">rg</label><br>
+    <input type="text" id="rgCliente" name="rg"><br>
+    
+    <label for="cpfCliente">cpf</label><br>
+    <input type="text" id="cpfCliente" name="cpf"><br>
+
+    <label for="enderecoCliente">Endereço</label><br>
+    <input type="text" id="enderecoCliente" name="endereco"><br>
+    
+    <br>
+    <input type="submit" value="Cadastrar">
+  </form>
+
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="editForm">
+        
+        <label for="editNome">Nome:</label><br>
+        <input type="text" id="editNome" name="nome"><br>
+        
+        <label for="editRg">rg</label><br>
+        <input type="text" id="editRg" name="rg"><br>
+
+        <label for="editCpf">cpf</label><br>
+        <input type="text" id="editCpf" name="cpf"><br>
+
+        <label for="editEndereco">endereço</label><br>
+        <input type="text" id="editEndereco" name="endereco"><br>
+        
+        <br>
+        <input type="submit" value="Salvar">
+      </form>
+    </div>
+  </div>
+
+  <script src="formularioCliente.js"></script>
+  <script src="tabelaCliente.js"></script>
+</body>
+</html>

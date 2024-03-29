@@ -1,5 +1,7 @@
 package br.novo.Model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
@@ -14,9 +16,13 @@ public abstract class Pessoa {
 
   public Pessoa(){}
 
+  @Expose
   private String nome;
+  @Expose
   private String rg;
+  @Expose
   private String cpf;
+  @Expose
   private String endereco;
   public String getNome() {
     return nome;

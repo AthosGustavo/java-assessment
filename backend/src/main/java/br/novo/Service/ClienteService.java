@@ -27,7 +27,7 @@ public class ClienteService {
     String request = req.body();
     JSONObject responseObject = new JSONObject(request);
 
-    Cliente cliente = new Cliente(responseObject.getJSONObject("Cliente").getString("nome"), responseObject.getJSONObject("Cliente").getString("rg"), responseObject.getJSONObject("Cliente").getString("cpf"), responseObject.getJSONObject("Cliente").getString("endereco"));
+    Cliente cliente = new Cliente(responseObject.getJSONObject("cliente").getString("nome"), responseObject.getJSONObject("cliente").getString("rg"), responseObject.getJSONObject("cliente").getString("cpf"), responseObject.getJSONObject("cliente").getString("endereco"));
     clienteRepository.save(cliente);
     return "Cliente adicionado com sucesso!";
   }

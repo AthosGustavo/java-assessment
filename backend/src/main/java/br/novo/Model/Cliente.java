@@ -1,5 +1,7 @@
 package br.novo.Model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,9 +10,11 @@ public class Cliente extends Pessoa {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Expose
   private Long id;
   @ManyToOne
   @JoinColumn(name = "livro_id", referencedColumnName = "id")
+  @Expose
   private Livro livros;
 
   public Cliente(String nome, String rg, String cpf, String endereco) {

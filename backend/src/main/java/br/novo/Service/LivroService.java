@@ -39,7 +39,7 @@ public class LivroService {
   public String editaLivroService(Long id, Request req){
     String request = req.body();
     JSONObject responseObject = new JSONObject(request);
-    System.out.println(responseObject + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    //System.out.println(responseObject + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     Livro livro = livroRepository.getLivro(id);
 
     if(livro != null){
