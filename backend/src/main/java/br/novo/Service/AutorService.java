@@ -20,6 +20,9 @@ public class AutorService {
     this.livroRepository = new LivroRepository();
   }
 
+  public AutorService(AutorRepository autorRepository){
+    this.autorRepository = new AutorRepository();
+  }
 
   public List<Autor> exibirAutorService(){
     return this.autorRepository.exibirAutores();
@@ -44,7 +47,7 @@ public class AutorService {
       return "Autor não encontrado";
     }
 
-    Livro livro = new Livro(responseObject.getJSONObject("Livro").getString("nome"), responseObject.getJSONObject("Livro").getString("genero"), responseObject.getJSONObject("Livro").getInt("paginas"),responseObject.getJSONObject("Livro").getBoolean("estaEmprestado"));
+    Livro livro = new Livro(responseObject.getJSONObject("livro").getString("nome"), responseObject.getJSONObject("livro").getString("genero"), responseObject.getJSONObject("livro").getInt("paginas"),responseObject.getJSONObject("livro").getBoolean("estaEmprestado"));
     livro.setAutor(autor);
     //autor.setLivro(livro);
     this.livroRepository.save(livro);

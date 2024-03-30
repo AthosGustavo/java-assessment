@@ -19,6 +19,10 @@ public class AutorController {
     autorService = new AutorService();
   }
 
+  public AutorController(AutorService autorService){
+    this.autorService = autorService;
+  }
+
   public Route cadastraAutorController = (Request req, Response res) -> autorService.cadastraAutorService(req);
 
   public Route cadastraLivroParaAutorExistenteController = (Request req, Response res) -> {

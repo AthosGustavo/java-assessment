@@ -57,19 +57,54 @@
   </style>
 </head>
 <body>
+  <br/>
   <button onclick="window.location.href='index.html'">Voltar</button>
+  <br/><br/>
+  
+  <p>Cadastrar livro para um autor existente</p>
+  <form id="autorComLivro">
+    <label>Id do autor</label>
+    <input type="number" id="idAutor">
+    
+    <br>
+    <label>Título do livro</label>
+    <input type="text" id="tituloLivro">
+    
+    <br>
+    <label>gênero</label>
+    <input type="text" id="generoLivro">
 
+    <br>
+    <label>páginas</label>
+    <input type="number" id="paginasLivro">
+
+    <br>
+    <select id="estaEmprestado">
+      <option value="true">Sim</option>
+      <option value="false">Não</option>
+    </select>
+
+    <input type="submit" value="Cadastrar"/>
+
+  </form>
+  <br><br>
+  <p>Cadastrar autor sem livro</p>
   <form id="autorForm">
-    <label for="titulo">Nome do autor</label><br>
+    <label for="titulo">Nome do autor</label>
     <input type="text" id="titulo" name="titulo"><br>
     <label for="contratoAtivo">Contrato Ativo:</label><br>
     <select id="contratoAtivo" name="contratoAtivo">
       <option value="true">Sim</option>
       <option value="false">Não</option>
-    </select><br>
+    </select>
     <input type="submit" value="Cadastrar">
   </form>
 
+
+ 
+  
+  <br/><br/><br/>
+  <p>Cadastrar autor sem livro</p>
   <div id="editModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>

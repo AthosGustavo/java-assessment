@@ -20,6 +20,10 @@ public class LivroController {
     livroService = new LivroService();
   }
 
+  public LivroController(LivroService livroService){
+    this.livroService = livroService;
+  }
+
   public Route cadastraLivroController = (Request req, Response res ) -> livroService.cadastraLivroService(req);
   public Route exibirLivroController = (Request req, Response res) -> {
     try {

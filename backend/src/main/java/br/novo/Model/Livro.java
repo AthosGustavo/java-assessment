@@ -18,11 +18,11 @@ public class Livro {
   private int paginas;
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name="autor_id", referencedColumnName = "id")
-
   @Expose
   private Autor autor;
   @OneToOne(mappedBy = "livros")
   private Cliente cliente;
+  @Expose
   private boolean estaEmprestado;
 
   public Livro(String nome, String genero, int paginas, Autor autor) {

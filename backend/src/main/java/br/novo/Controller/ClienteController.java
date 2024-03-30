@@ -2,6 +2,7 @@ package br.novo.Controller;
 
 import br.novo.Model.Cliente;
 import br.novo.Service.ClienteService;
+import br.novo.Service.LivroService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import spark.Request;
@@ -16,6 +17,10 @@ public class ClienteController {
 
   public ClienteController(){
     this.clienteService = new ClienteService();
+  }
+
+  public ClienteController(ClienteService clienteService){
+    this.clienteService = clienteService;
   }
 
   public Route exibirClienteController = (Request req, Response res) -> {

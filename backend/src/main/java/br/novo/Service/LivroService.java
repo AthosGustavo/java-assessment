@@ -14,6 +14,10 @@ public class LivroService {
   public LivroService(){
     this.livroRepository = new LivroRepository();
   }
+
+  public LivroService(LivroRepository livroRepository){
+    this.livroRepository = new LivroRepository();
+  }
   public String cadastraLivroService(Request req){
     String request = req.body();
     JSONObject responseObject = new JSONObject(request);
