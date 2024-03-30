@@ -120,4 +120,8 @@ public class AutorRepository {
 
     return livro;
   }
+
+  public void setSession(Session session) {
+    this.session = session;
+  }
 }
