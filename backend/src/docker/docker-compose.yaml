@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mysql:
+    container_name: mysql-container-biblioteca-uninassau
+    image: mysql:8.0
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_DATABASE=biblioteca_uninassau
+      - MYSQL_ROOT_PASSWORD=senhaRoot
+      - MYSQL_USER=athos
+      - MYSQL_PASSWORD=123
+    networks:
+      - sistema-biblioteca
+
+  java:
+    container_name: java-container-biblioteca-uninassau
+    build:
+      context: ../../
+      dockerfile: src/docker/Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+    volumes:
+      - './src:/usr/app/src'
+    expose:
+      - '8080'
+    networks:
+      - sistema-biblioteca
+
+networks:
+  sistema-biblioteca:
+    driver: bridge
